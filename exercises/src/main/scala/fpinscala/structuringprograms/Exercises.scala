@@ -15,7 +15,7 @@ object Exercises {
 
   type Pred[A] = A => Boolean
 
-  def absolute(f: Int => Int): Int => Int = n => f(n).abs
+  def absolute[A](f: A => Int): A => Int = n => f(n).abs
 
   def divisibleBy(k: Int): Pred[Int] = sys.error("todo")
 

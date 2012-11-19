@@ -19,6 +19,8 @@ object Exercises {
 
   def divisibleBy(k: Int): Pred[Int] = _ % k == 0
 
+  val even = divisibleBy(2)
+
   def lift[A](f: (Boolean, Boolean) => Boolean,
               g: Pred[A],
               h: Pred[A]): Pred[A] = sys.error("todo")

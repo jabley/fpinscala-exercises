@@ -17,7 +17,7 @@ object Exercises {
 
   def absolute[A](f: A => Int): A => Int = n => f(n).abs
 
-  def divisibleBy(k: Int): Pred[Int] = sys.error("todo")
+  def divisibleBy(k: Int): Pred[Int] = _ % k == 0
 
   def lift[A](f: (Boolean, Boolean) => Boolean,
               g: Pred[A],

@@ -21,13 +21,13 @@ object Exercises {
 
   val even = divisibleBy(2)
 
-  def divisibleBy3And5: Pred[Int] = n => divisibleBy(3)(n) && divisibleBy(5)(n)
+  val divisibleBy3And5: Pred[Int] = lift(_ && _, divisibleBy(3), divisibleBy(5))
 
-  def divisibleBy3Or5: Pred[Int] = n => divisibleBy(3)(n) || divisibleBy(5)(n)
+  val divisibleBy3Or5: Pred[Int] = lift(_ || _, divisibleBy(3), divisibleBy(5))
 
   def lift[A](f: (Boolean, Boolean) => Boolean,
               g: Pred[A],
-              h: Pred[A]): Pred[A] = sys.error("todo")
+              h: Pred[A]): Pred[A] = n => f(g(n), h(n))
 
   def curry[A,B,C](f: (A, B) => C): A => B => C = sys.error("todo")
 

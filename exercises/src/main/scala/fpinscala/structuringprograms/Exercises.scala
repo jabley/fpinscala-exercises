@@ -7,6 +7,12 @@ object Exercises {
   def greaterBy(x: Box, y: Box, f: Box => Double): Box = 
   if (f(x) > f(y)) x else y
 
+  def wider(x: Box, y: Box): Box =
+    greaterBy(x, y, p => p.width)
+
+  def taller(x: Box, y: Box) =
+    greaterBy(x, y, p => p.height)
+
   type Pred[A] = A => Boolean
 
   def absolute(f: Int => Int): Int => Int = sys.error("todo")

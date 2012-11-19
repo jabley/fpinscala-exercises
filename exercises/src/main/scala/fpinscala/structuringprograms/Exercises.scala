@@ -8,10 +8,10 @@ object Exercises {
   if (f(x) > f(y)) x else y
 
   def wider(x: Box, y: Box): Box =
-    greaterBy(x, y, p => p.width)
+    greaterBy(x, y, _.width)
 
   def taller(x: Box, y: Box) =
-    greaterBy(x, y, p => p.height)
+    greaterBy(x, y, _.height)
 
   type Pred[A] = A => Boolean
 

@@ -35,7 +35,7 @@ object Exercises {
   def uncurry[A,B,C](f: A => B => C): (A, B) => C =
     (a, b) => f(a)(b)
 
-  def compose[A,B,C](f: B => C, g: A => B): A => C = sys.error("todo")
+  def compose[A,B,C](f: B => C, g: A => B): A => C = a => f(g(a))
 
   def lift3[A,B,C,D,E](f: (B, C, D) => E)(g: A => B,
                                           h: A => C,

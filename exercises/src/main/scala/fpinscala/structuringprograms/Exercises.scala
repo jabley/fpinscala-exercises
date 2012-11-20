@@ -29,7 +29,8 @@ object Exercises {
               g: Pred[A],
               h: Pred[A]): Pred[A] = n => f(g(n), h(n))
 
-  def curry[A,B,C](f: (A, B) => C): A => B => C = sys.error("todo")
+  def curry[A,B,C](f: (A, B) => C): A => B => C =
+    a => b => f(a, b)
 
   def uncurry[A,B,C](f: A => B => C): (A, B) => C = sys.error("todo")
 
